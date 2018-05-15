@@ -21,14 +21,15 @@ body {
 }
 
 .header {
-    background: top cover;
     background-image: linear-gradient(
         to right bottom, 
         rgba(126,213,111,.8),
         rgba(40,180, 131, .8)
     ),
     url("../img/hero.jpg");
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* top left, top right, bottom right, bottom left (50% 0, 100% 100%, 0 100%) for a triangle */
+    background-position: top;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* top left, top right, bottom right, bottom left | (50% 0, 100% 100%, 0 100%) for a triangle */
     height: 95vh;
     position: relative;
 }
@@ -46,6 +47,7 @@ body {
 .text-box {
     left: 50%;
     position: absolute;
+    text-align: center;
     top: 40%;
     transform: translate(-47%, -50%);
 }
@@ -98,4 +100,67 @@ body {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+.btn-animated {
+    animation: moveInUp .3s ease-in .2s backwards;
+}
+
+@keyframes moveInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn:link,
+.btn:visited {
+    border-radius: 100px;
+    display: inline-block;
+    padding: 15px 40px;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .2s
+}
+
+.btn:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    transform: translateY(-1px);
+}
+
+.btn::after {
+    border-radius: 100px;
+    content: "";
+    display: inline-block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all .4s;
+    width: 100%;
+    z-index: -1;
+}
+
+.btn:hover::after {
+    opacity: 0;
+    transform: scaleX(1.4) scaleY(1.6);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+.btn-white::after {
+    background-color: #fff;
 }
