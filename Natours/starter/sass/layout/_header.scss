@@ -1,0 +1,27 @@
+/*  Header  */
+
+.header {
+    background-image: linear-gradient( to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../img/hero.jpg");
+    background-position: top;
+    background-size: cover;
+    -webkit-clip-path: polygon( 0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon( 0 0, 100% 0, 100% 75vh, 0 100%);
+    /* top left, top right, bottom right, bottom left | (50% 0, 100% 100%, 0 100%) for a triangle */
+    height: 95vh;
+    position: relative;
+    &__logo-box {
+        left: 4rem;
+        position: absolute;
+        top: 4rem;
+    }
+    &__logo {
+        height: 3.5rem;
+    }
+    &__text-box {
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        top: 40%;
+        transform: translate(-47%, -50%);
+    }
+}
