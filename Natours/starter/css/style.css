@@ -73,6 +73,9 @@ body {
 .btn:hover {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   transform: translateY(-0.3rem); }
+  .btn:hover::after {
+    opacity: 0;
+    transform: scaleX(1.4) scaleY(1.6); }
 
 .btn:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
@@ -90,19 +93,14 @@ body {
   width: 100%;
   z-index: -1; }
 
-.btn:hover::after {
-  opacity: 0;
-  transform: scaleX(1.4) scaleY(1.6); }
-
-.btn--animated {
-  animation: moveInUp 0.3s ease-in 0.2s backwards; }
-
 .btn--white {
   background-color: #fff;
   color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
-.btn--white::after {
-  background-color: #fff; }
+.btn--animated {
+  animation: moveInUp 0.3s ease-in 0.2s backwards; }
 
 /*  CSS : @keyframes Animations  */
 @keyframes moveInLeft {
