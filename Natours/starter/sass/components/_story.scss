@@ -1,0 +1,64 @@
+.story {
+    background-color: rgba($color-white,.6);
+    border-radius: 3px;
+    box-shadow: 0 3rem 6rem rgba($color-black,.1);
+    font-size: $default-font-size;
+    margin: 0 auto;
+    padding: 6rem;
+    padding-left: 9rem;
+    -webkit-transform: skewX(-12deg);
+    transform: skewX(-12deg);
+    width: 75%;
+
+    &__shape {
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        float: left;
+        height: 15rem;
+        position: relative;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-transform: translateX(-3rem) skewX(12deg);
+        transform: translateX(-3rem) skewX(12deg);
+        width: 15rem;
+    }
+
+    &__img {
+        height: 100%;
+        -webkit-transform: translateX(-4rem) scale(1.4);
+        transform: translateX(-4rem) scale(1.4);
+        transition: all .5s linear;
+    }
+
+    &__text {
+        -webkit-transform: skewX(12deg);
+        transform: skewX(12deg);
+    }
+
+    &__caption {
+        backface-visibility: hidden;
+        color: $color-white;
+        font-size: 1.7rem;
+        left: 50%;
+        opacity: 0;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        top: 50%;
+        -webkit-transform: translate(-50%, 20%);
+        transform: translate(-50%, 20%);
+        transition: transform .5s ease, opacity .5s ease-in-out;
+    }
+
+    &:hover &__img {
+        filter: blur(0.3rem) brightness(80%);
+        -webkit-transform: translateX(-4rem) scale(1);
+        transform: translateX(-4rem) scale(1);
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}

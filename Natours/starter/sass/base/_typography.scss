@@ -41,7 +41,7 @@ body {
     font-weight: 700;
     letter-spacing: .2rem;
     text-transform: uppercase;
-    transition: all .2s;
+    transition: text-shadow .2s, -webkit-transform .2s, transform .2s;
     &:hover {
         text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
         -webkit-transform: skewY(2deg) skewX(15deg) scale(1.1);
