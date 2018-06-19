@@ -9,6 +9,10 @@
     /* top left, top right, bottom right, bottom left | (50% 0, 100% 100%, 0 100%) for a triangle */
     height: 95vh;
     position: relative;
+    @include respond(phone) {
+        -webkit-clip-path: polygon( 0 0, 100% 0, 100% 90vh, 0 100%);
+        clip-path: polygon( 0 0, 100% 0, 100% 90vh, 0 100%);
+    }
     &__logo-box {
         left: 4rem;
         position: absolute;

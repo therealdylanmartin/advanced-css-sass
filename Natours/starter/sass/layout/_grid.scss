@@ -3,14 +3,33 @@
 .row {
     margin: 0 auto;
     max-width: $grid-width;
+    @include respond(tab-port) {
+        max-width: 65rem;
+        padding: 0 3rem;
+    }
+    @include respond(phone) {
+        padding: 0 1rem;
+    }
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
     }
     @include clearfix;
     [class^="col-"] {
         float: left;
+        @include respond(tab-port) {
+            @include clearfix;
+            float: none;
+            margin-bottom: $gutter-vertical-small;
+            width: 100%!important;
+        }
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+            @include respond(tab-port) {
+                margin-right: 0;
+            }
         }
     }
     .col-1-of-2 {

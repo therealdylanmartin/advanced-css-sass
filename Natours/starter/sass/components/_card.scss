@@ -3,6 +3,14 @@
   -moz-prespective: 150rem;
   perspective: 150rem;
   position: relative;
+  @include respond(tab-port) {
+    background-color: $color-white;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    height: auto;
+    margin: 0 auto;
+    max-width: 50rem;
+  }
   &__side {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -13,14 +21,24 @@
     overflow: hidden;
     position: absolute;
     top: 0;
-    transition: all 0.8s ease .2s;
+    transition: all 0.8s ease 0.2s;
     width: 100%;
+    @include respond(tab-port) {
+      box-shadow: none;
+      height: auto;
+      position: relative;
+    }
     &--front {
       background-color: $color-white;
     }
     &--back {
       -webkit-transform: rotateY(180deg);
       transform: rotateY(180deg);
+      @include respond(tab-port) {
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+      }
       &-1 {
         background-image: linear-gradient(
           to right bottom,
@@ -47,6 +65,10 @@
   &:hover &__side--front {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
+    @include respond(tab-port) {
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
+    }
   }
   &:hover &__side--back {
     -webkit-transform: rotateY(0);
@@ -56,8 +78,8 @@
   &__picture {
     background-blend-mode: screen; // LOTS OF COOL PHOTOSHOP_LIKE OPTIONS
     background-size: cover;
-    border-top-left-radius: .3rem;
-    border-top-right-radius: .3rem;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     height: 23rem;
@@ -70,21 +92,21 @@
         url(../img/nat-5.jpg);
     }
     &--2 {
-        background-image: linear-gradient(
-            to right bottom,
-            $color-primary-light,
-            $color-primary-dark
-          ),
-          url(../img/nat-6.jpg);
-      }
-      &--3 {
-        background-image: linear-gradient(
-            to right bottom,
-            $color-tertiary-light,
-            $color-tertiary-dark
-          ),
-          url(../img/nat-7.jpg);
-      }
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(../img/nat-6.jpg);
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../img/nat-7.jpg);
+    }
   }
   &__heading {
     color: $color-white;
@@ -125,6 +147,9 @@
   }
   &__details {
     padding: 3rem;
+    @include respond(tab-port) {
+      padding: .5rem;
+    }
     ul {
       list-style: none;
       margin: 0 auto;
@@ -133,6 +158,10 @@
         font-size: 1.5rem;
         padding: 1rem;
         text-align: center;
+        @include respond(tab-port) {
+          font-size: 1.8rem;
+          padding: .5rem;
+        }
         &:not(:last-child) {
           border-bottom: 1px solid $color-gray-light-2;
         }
@@ -141,24 +170,40 @@
   }
   // BACK SIDE STYLING
   &__cta {
-      left: 50%;
-      position: absolute;
-      text-align: center;
-      top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      width: 90%;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 90%;
+    @include respond(tab-port) {
+      left: 0;
+      padding: 6.5rem 4rem 4rem;
+      position: relative;
+      top: 0;
+      -webkit-transform: translate(0);
+      transform: translate(0);
+      width: 100%;
+    }
   }
   &__price-box {
     color: $color-white;
     margin-bottom: 8rem;
+    @include respond(tab-port) {
+      margin-bottom: 1rem;
+    }
   }
   &__price-only {
     font-size: $default-font-size;
     text-transform: uppercase;
+    @include respond(tab-port) {
+      font-size: 3rem;
+      line-height: .4;
+    }
   }
   &__price-value {
-      font-size: 6rem;
-      font-weight: 100;
+    font-size: 6rem;
+    font-weight: 100;
   }
 }

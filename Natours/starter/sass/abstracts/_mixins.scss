@@ -1,16 +1,39 @@
-/*  Clear Floats  */
-
 @mixin clearfix {
-    &::after {
-        clear: both;
-        content: "";
-        display: table;
-    }
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
 }
 
 @mixin centerContent {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%,-50%);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
+
+/*  Media Query Manager  */
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media screen and (max-width: $screen-phone) { @content };
+    }
+    @if $breakpoint == tab-port {
+        @media screen and (max-width: $screen-tab-port) { @content };
+    }
+    @if $breakpoint == tab-land {
+        @media screen and (max-width: $screen-tab-land) { @content };
+    }
+    @if $breakpoint == big-desktop {
+        @media screen and (min-width: $screen-big-desktop) { @content };
+    }
+}
+
+/*
+
+ORDER:
+
+*Base + Typography*   >   *General Layout + Grid*   >   Page Layout   >   Components
+
+*/

@@ -2,9 +2,15 @@
   background-color: $color-gray-dark-3;
   font-size: 1.4rem;
   padding: 10rem 0;
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
   &__logo-box {
     margin-bottom: 8rem;
     text-align: center;
+    @include respond(tab-port) {
+       margin-bottom: 4rem;
+    }
   }
   &__logo {
     width: 15rem;
@@ -13,6 +19,10 @@
     border-top: 1px solid $color-gray-light-2;
     display: inline-block;
     padding-top: 2rem;
+    @include respond(tab-port) {
+      text-align: center;
+      width: 100%;
+    }
   }
   &__list {
     list-style: none;
@@ -42,11 +52,14 @@
     }
   }
   &__copyright {
+    @include clearfix;
     border-top: 1px solid $color-gray-light-2;
     color: $color-gray-light-1;
     float: right;
     padding-top: 2rem;
     width: 85%;
-    @include clearfix;
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
 }
