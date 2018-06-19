@@ -3,7 +3,8 @@
   -moz-prespective: 150rem;
   perspective: 150rem;
   position: relative;
-  @include respond(tab-port) {
+  @media only screen and (max-width: $screen-tab-port),
+  only screen and (hover: none) {
     background-color: $color-white;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
@@ -23,7 +24,8 @@
     top: 0;
     transition: all 0.8s ease 0.2s;
     width: 100%;
-    @include respond(tab-port) {
+    @media only screen and (max-width: $screen-tab-port),
+    only screen and (hover: none) {
       box-shadow: none;
       height: auto;
       position: relative;
@@ -34,7 +36,8 @@
     &--back {
       -webkit-transform: rotateY(180deg);
       transform: rotateY(180deg);
-      @include respond(tab-port) {
+      @media only screen and (max-width: $screen-tab-port),
+      only screen and (hover: none) {
         clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
         -webkit-transform: rotateY(0);
         transform: rotateY(0);
@@ -65,7 +68,8 @@
   &:hover &__side--front {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
-    @include respond(tab-port) {
+    @media only screen and (max-width: $screen-tab-port),
+    only screen and (hover: none) {
       -webkit-transform: rotateY(0);
       transform: rotateY(0);
     }
@@ -147,7 +151,8 @@
   }
   &__details {
     padding: 3rem;
-    @include respond(tab-port) {
+    @media only screen and (max-width: $screen-tab-port),
+    only screen and (hover: none) {
       padding: .5rem;
     }
     ul {
@@ -158,7 +163,8 @@
         font-size: 1.5rem;
         padding: 1rem;
         text-align: center;
-        @include respond(tab-port) {
+        @media only screen and (max-width: $screen-tab-port),
+        only screen and (hover: none) {
           font-size: 1.8rem;
           padding: .5rem;
         }
@@ -177,7 +183,8 @@
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 90%;
-    @include respond(tab-port) {
+    @media only screen and (max-width: $screen-tab-port),
+    only screen and (hover: none) {
       left: 0;
       padding: 6.5rem 4rem 4rem;
       position: relative;
@@ -190,14 +197,16 @@
   &__price-box {
     color: $color-white;
     margin-bottom: 8rem;
-    @include respond(tab-port) {
+    @media only screen and (max-width: $screen-tab-port),
+    only screen and (hover: none) {
       margin-bottom: 1rem;
     }
   }
   &__price-only {
     font-size: $default-font-size;
     text-transform: uppercase;
-    @include respond(tab-port) {
+    @media only screen and (max-width: $screen-tab-port),
+    only screen and (hover: none) {
       font-size: 3rem;
       line-height: .4;
     }
